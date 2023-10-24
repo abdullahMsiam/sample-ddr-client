@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import TheLoader from './components/TheLoader';
+import { Outlet } from 'react-router-dom';
+import Home from './pages/Home';
 
-function App() {
+const App = () => {
 
   const [isLoading, setLoading] = useState(true);
 
@@ -19,10 +21,8 @@ function App() {
   return isLoading ? (
     <TheLoader />
   ) : (
-    <div className='max-w-6xl mx-auto border-4 '>
-      <div className='text-center'>
-        <button className='btn btn-warning'>click me</button>
-      </div>
+    <div className='max-w-7xl mx-auto '>
+      <Home />
     </div>
   )
 }
